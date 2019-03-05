@@ -4,6 +4,9 @@ phases:
     install:
         commands:
             - echo Install started on `date`
+            - apt-get install php-zip php-gd
+    pre_build:
+        commands:
             - composer install --no-dev -o
             - cd ~/webroot/grav
             - bin/grav install
