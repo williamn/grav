@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+    install:
+        commands:
+            - echo Install started on `date`
+            - composer install --no-dev -o
+            - cd ~/webroot/grav
+            - bin/grav install
+    build:
+        commands:
+            - echo Build started on `date`
+            - composer test
